@@ -16,9 +16,6 @@ android {
         multiDexEnabled true
         versionCode 1
         versionName "1.0.0"
-
-        renderscriptTargetApi 30
-        renderscriptSupportModeEnabled true
     }
 
     buildTypes {
@@ -38,22 +35,12 @@ android {
         jvmTarget = "1.8"
     }
 
-    packagingOptions {
-        jniLibs {
-            useLegacyPackaging true
-        }
-    }
-
     buildFeatures {
         buildConfig true
         viewBinding true
     }
 
     namespace 'com.dooo.android'
-}
-
-configurations.all {
-    exclude group: 'com.github.alpbak'
 }
 
 dependencies {
@@ -63,16 +50,13 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.lifecycle:lifecycle-process:2.5.1'
-    implementation 'androidx.core:core-ktx:1.13.1'
-    implementation 'androidx.work:work-runtime:2.7.1'
     implementation "androidx.multidex:multidex:2.0.1"
 
     // Firebase
     implementation platform('com.google.firebase:firebase-bom:26.4.0')
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-crashlytics'
-    implementation 'com.google.firebase:firebase-auth:22.3.0'
+    implementation 'com.google.firebase:firebase-auth'
 
     // OneSignal
     implementation 'com.onesignal:OneSignal:4.8.4'
@@ -85,20 +69,22 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.13.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
 
-    // ExoPlayer
+    // Exoplayer
     implementation 'com.google.android.exoplayer:exoplayer:2.18.3'
 
     // Ads
     implementation 'com.google.android.gms:play-services-ads:23.0.0'
     implementation project(':nativetemplates')
 
-    // StartApp
-    implementation 'com.startapp:inapp-sdk:5.+'
-
-    // UI libs
+    // UI
     implementation 'com.airbnb.android:lottie:6.1.0'
     implementation 'com.makeramen:roundedimageview:2.3.0'
     implementation 'dev.shreyaspatil.MaterialDialog:MaterialDialog:2.2.2'
+
+    // 🔥 FIXED LIBRARIES (Build Fail solve)
+    implementation 'com.github.jetradarmobile:android-snowfall:1.2.1'
+    implementation 'com.github.vkay94:DoubleTapPlayerView:1.0.4'
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0'
 
     implementation project(':liquid_swipe')
 
