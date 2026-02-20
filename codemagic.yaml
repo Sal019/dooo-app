@@ -5,13 +5,13 @@ workflows:
     instance_type: linux
     environment:
       java: 17
-      groups:
-        - google_play # Optional: only if you add secrets later
     triggering:
       events:
         - push
-      branches:
-        - master
+      branch_patterns:
+        - pattern: 'master'
+          include: true
+          source: true
     scripts:
       - name: Set up local.properties
         script: |
@@ -26,4 +26,3 @@ workflows:
       email:
         recipients:
           - mdsalmanhelp0@gmail.com
-          
