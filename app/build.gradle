@@ -52,6 +52,10 @@ android {
     namespace 'com.dooo.android'
 }
 
+configurations.all {
+    exclude group: 'com.github.alpbak'
+}
+
 dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
@@ -95,9 +99,6 @@ dependencies {
     implementation 'com.airbnb.android:lottie:6.1.0'
     implementation 'com.makeramen:roundedimageview:2.3.0'
     implementation 'dev.shreyaspatil.MaterialDialog:MaterialDialog:2.2.2'
-
-    // ✅ FIXED VERSION (CI compatible)
-    implementation 'com.github.alpbak:BoxedVerticalSeekBar:1.1.0'
 
     implementation project(':liquid_swipe')
 
