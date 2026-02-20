@@ -15,12 +15,10 @@ workflows:
     scripts:
       - name: Build Android Debug APK
         script: |
-          # Navigate to the actual Android project folder
-          cd app
           chmod +x gradlew
-          ./gradlew assembleDebug
+          ./gradlew :app:assembleDebug
     artifacts:
-      - app/app/build/outputs/apk/debug/*.apk
+      - app/build/outputs/apk/debug/*.apk
     publishing:
       email:
         recipients:
